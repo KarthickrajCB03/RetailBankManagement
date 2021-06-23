@@ -1,0 +1,42 @@
+﻿@model BankPortalMVC.Models.dwacc
+
+@{
+    ViewData["Title"] = "Withdraw";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link rel="stylesheet"href="~/css/Withdraw.css"/>
+</head>
+<body>
+    <header>
+        <ul id="unl">
+            <li id="lst"><a asp-action="Index">Home</a></li>
+            <li id="lst"><a asp-action="Deposit">Deposit Money</a></li>
+            <li id="lst"><a class="active" asp-action="Withdraw">Withdraw Money</a></li>
+            <li id="lst"><a asp-action="Transfer">Transfer Money</a></li>
+            <li id="lst"><a asp-action="AccountStatement">See Account Details</a></li>
+        </ul>
+    </header>
+    <h1>Withdrawal Form</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Withdraw" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="AccountId" class="control-label">Enter your Acccount ID:</label>
+                    <input asp-for="AccountId" class="form-control" />
+                    <span asp-validation-for="AccountId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Balance" class="control-label">Enter the amount to be withdrawn(Rs.)</label>
+                    <input asp-for="Balance" class="form-control" />
+                    <span asp-validation-for="Balance" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" id="btn" value="Withdraw Money" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>

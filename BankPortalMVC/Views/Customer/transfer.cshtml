@@ -1,0 +1,47 @@
+﻿@model BankPortalMVC.Models.transfers
+
+@{
+    ViewData["Title"] = "Transfer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link rel="stylesheet" href="~/css/Transfer.css" />
+</head>
+<body>
+    <header>
+        <ul id="unl">
+            <li id="lst"><a asp-action="Index">Home</a></li>
+            <li id="lst"><a asp-action="Deposit">Deposit Money</a></li>
+            <li id="lst"><a asp-action="Withdraw">Withdraw Money</a></li>
+            <li id="lst"><a class="active" asp-action="Transfer">Transfer Money</a></li>
+            <li id="lst"><a asp-action="AccountStatement">See Account Details</a></li>
+        </ul>
+    </header>
+    <h1>Transfer Form</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="transfer" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="source_accid" class="control-label">Enter Your Account ID</label>
+                    <input asp-for="source_accid" class="form-control" />
+                    <span asp-validation-for="source_accid" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="destination_accid" class="control-label">Enter Receiver Account ID</label>
+                    <input asp-for="destination_accid" class="form-control" />
+                    <span asp-validation-for="destination_accid" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="amount" class="control-label">Amount to be transfered</label>
+                    <input asp-for="amount" class="form-control" />
+                    <span asp-validation-for="amount" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" id="btn" value="Transfer Money" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>

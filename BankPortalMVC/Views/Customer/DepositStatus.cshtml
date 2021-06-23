@@ -1,0 +1,70 @@
+﻿@model BankPortalMVC.Models.Depositwithdraw
+
+@{
+    ViewData["Title"] = "DepositStatus";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="~/css/DepositStatus.css" />
+</head>
+
+<body>
+    <!--<h1>Deposit Status</h1>
+    <div id="hd"><a asp-action="Index" >Go to Home Page</a></div>-->
+    <header>
+        <ul id="unl">
+
+            <li id="list"><span id="ab" class="active">Deposit Status</span></li>
+            <li id="list"><span id="abcd" onclick="window.print()"><i class='fas fa-print' style='font-size:48px;color:red'></i></span></li>
+            <li id="list"><a asp-action="Index"><i class='fas fa-home' style='font-size:48px;color:red'></i></a></li>
+        </ul>
+    </header>
+    @{ if (Model.Message.Equals("Deposited Successfully"))
+                    {
+                        <table border="1" id="tb">
+                            <tr>
+                                <th>
+                                    Particulars
+                                </th>
+                                <th>
+                                    Details
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Account ID
+                                </td>
+                                <td>
+                                    @Model.AccountID
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Transaction Status
+                                </td>
+                                <td>
+                                    @Model.Message
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Account Balance After Deposit
+                                </td>
+                                <td>
+                                    @Model.Balance
+                                </td>
+                            </tr>
+
+                        </table>
+        }
+        else
+            {
+                <h2>
+                    @Model.Message
+                </h2>
+            }
+        }
+
+</body>

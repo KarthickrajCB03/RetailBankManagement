@@ -1,0 +1,66 @@
+﻿@model BankPortalMVC.Models.Depositwithdraw
+@{ 
+    ViewData["Title"] = "WithdrawStatus";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet"href="~/css/WithdrawStatus.css"/>
+</head>
+<body>
+    <!--<h1>Withdraw Status</h1>
+    <div id="hd"><a asp-action="Index">Go to Home Page</a></div>-->
+    <header>
+        <ul id="unl">
+            <li id="list"><span id="ab" class="active">Withdraw Status</span></li>
+            <li id="list"><span id="abcd" onclick="window.print()"><i class='fas fa-print' style='font-size:48px;color:red'></i></span></li>
+            <li id="list"><a asp-action="Index"><i class='fas fa-home' style='font-size:48px;color:red'></i></a></li>
+        </ul>
+    </header>
+    @{ if (Model.Message.Equals("Withdraw Successfull,but service charge will be deducted at the end of month since Balance is less than 1000") ||
+                        Model.Message.Equals("Withdraw Successfull"))
+                    {
+                        <table border="1">
+                            <tr>
+                                <th>
+                                    Particulars
+                                </th>
+                                <th>
+                                    Details
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Account ID
+                                </td>
+                                <td>
+                                    @Model.AccountID
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Transaction Status
+                                </td>
+                                <td>
+                                    @Model.Message
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Account Balance After Withdrawal
+                                </td>
+                                <td>
+                                    @Model.Balance
+                                </td>
+                            </tr>
+
+                        </table>
+        }
+        else
+            {
+                <h2>@Model.Message</h2>
+            }
+        }
+
+</body>

@@ -1,0 +1,19 @@
+﻿#hd {
+    padding-left: 60px;
+}
+
+#tb {
+    border-radius: 20px;
+    text-align: center;
+    margin-left: 10%;
+}
+
+body {
+    text-align: center;
+    
+    background-color:aqua;
+}
+
+h1 {
+    text-align: left;
+}

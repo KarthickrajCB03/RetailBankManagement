@@ -1,0 +1,47 @@
+﻿@model BankPortalMVC.Models.AccDetState
+
+@{
+    ViewData["Title"] = "AccountStatement";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link rel="stylesheet" href="~/css/AccountStatement.css" />
+</head>
+<body>
+    <header>
+        <ul id="unl">
+            <li id="lst"><a asp-action="Index">Home</a></li>
+            <li id="lst"><a asp-action="Deposit">Deposit Money</a></li>
+            <li id="lst"><a asp-action="Withdraw">Withdraw Money</a></li>
+            <li id="lst"><a asp-action="Transfer">Transfer Money</a></li>
+            <li id="lst"><a class="active" asp-action="AccountStatement">See Account Details</a></li>
+        </ul>
+    </header>
+    <h1>View Account Statement</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="AccountStatement" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="AccountId" class="control-label">Enter Account ID</label>
+                    <input asp-for="AccountId" class="form-control" />
+                    <span asp-validation-for="AccountId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="from_date" class="control-label">Enter start date(Donot give / Eg: If 26/09/2020 give 26092020)</label>
+                    <input asp-for="from_date" class="form-control" />
+                    <span asp-validation-for="from_date" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="to_date" class="control-label">Enter end date(Donot give / Eg: If 26/09/2020 give 26092020)</label>
+                    <input asp-for="to_date" class="form-control" />
+                    <span asp-validation-for="to_date" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" id="btn" value="Submit" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>

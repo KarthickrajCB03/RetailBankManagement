@@ -1,0 +1,65 @@
+﻿@model BankPortalMVC.Models.transactionmsg
+@{
+    ViewData["Title"] = "TransferStatus";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="~/css/TransferStatus.css" />
+</head>
+<!--<h1>Transfer Status</h1>
+<div id="hd"><a asp-action="Index">Go to Home Page</a></div>-->
+<body>
+    <header>
+        <ul id="unl">
+            <li id="list"><span id="ab" class="active">TransferStatus</span></li>
+            <li id="list"><span id="abcd" onclick="window.print()"><i class='fas fa-print' style='font-size:48px;color:red'></i></span></li>
+            <li id="list"><a asp-action="Index"><i class='fas fa-home' style='font-size:48px;color:red'></i></a></li>
+        </ul>
+    </header>
+
+    @{ if (Model.transferStatus.Equals("Success"))
+                    {
+                        <table border="1">
+                            <tr>
+                                <th>
+                                    Particulars
+                                </th>
+                                <th>
+                                    Details
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Sender Account Balance
+                                </td>
+                                <td>
+                                    @Model.sbal
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Receiver Account Balance
+                                </td>
+                                <td>
+                                    @Model.rbal
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Transfer Status
+                                </td>
+                                <td>
+                                    @Model.transferStatus
+                                </td>
+                            </tr>
+                        </table>
+        }
+        else
+            {
+                <h2>@Model.transferStatus</h2>
+            }
+        }
+
+</body>
