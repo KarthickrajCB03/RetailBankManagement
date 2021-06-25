@@ -7,43 +7,100 @@
 <head>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <style>
+    .body {
+    text-align: center;
+    }
+
+    #tb {
+    text-align: center;
+    }
+
+    #hd {
+    text-align: right;
+    }
+
+    #unl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    }
+
+    #list {
+    float: left;
+    }
+
+    li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+    #ab {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+    background-color: #111;
+    }
+
+    .active {
+    background-color: #4CAF50;
+    }
+
+    #abcd{
+    float: right;
+    color:white;
+    }
+    </style>
 </head>
 <body>
-    <h1>AccountStatementStatus</h1>
-    <span style="float:right">
-        <i class='fas fa-print' style='font-size:48px;color:red' onclick="window.print()"></i>
-        <a asp-action="Index"><i class='fas fa-home' style='font-size:48px;color:red'></i></a>
-    </span>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.date)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Narration)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.refno)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.valueDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.withdrawal)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.deposit)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.closingBalance)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+    <header>
+        <ul id="unl">
+            <li id="list"><span id="ab" class="active">TransferStatus</span></li>
+            <li id="list"><span id="abcd" onclick="window.print()">Print<i class='fas fa-print' style='font-size:30px;padding-top:12px;color:#b3f7ae'></i></span></li>
+            <li id="list"><a asp-action="Index">Home<i class='fas fa-home' style='font-size:30px;color:#b3f7ae'></i></a></li>
+        </ul>
+    </header>
+   
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.date)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Narration)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.refno)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.valueDate)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.withdrawal)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.deposit)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.closingBalance)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.date)
@@ -66,8 +123,9 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.closingBalance)
                     </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+                </tr>}
+                            </tbody>
+                        </table>
+                   
+
 </body>

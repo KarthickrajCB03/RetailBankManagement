@@ -118,10 +118,17 @@ namespace BankPortalMVC.Controllers
             if (response.IsSuccessStatusCode)
             {
                 string data = response.Content.ReadAsStringAsync().Result;
-                List<Statement> ac = JsonConvert.DeserializeObject<List<Statement>>(data);
-                return View(ac);
+                if (!string.IsNullOrEmpty(data))
+                {
+                    List<Statement> ac = JsonConvert.DeserializeObject<List<Statement>>(data);
+                    return View(ac);
+                }
             }
-            return BadRequest();
+            return View("AccountStatementError");
+        }
+        public IActionResult AccountStatementError()
+        {
+            return View();
         }
     }
 }

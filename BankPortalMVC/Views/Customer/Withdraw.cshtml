@@ -5,7 +5,48 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <head>
-    <link rel="stylesheet"href="~/css/Withdraw.css"/>
+    <style>
+        #unl {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        #lst {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+            li a:hover:not(.active) {
+                background-color: #111;
+            }
+
+        .active {
+            background-color: #4CAF50;
+        }
+
+        #btn {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -23,11 +64,13 @@
         <div class="col-md-4">
             <form asp-action="Withdraw" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <br />
                 <div class="form-group">
                     <label asp-for="AccountId" class="control-label">Enter your Acccount ID:</label>
                     <input asp-for="AccountId" class="form-control" />
                     <span asp-validation-for="AccountId" class="text-danger"></span>
                 </div>
+                <br />
                 <div class="form-group">
                     <label asp-for="Balance" class="control-label">Enter the amount to be withdrawn(Rs.)</label>
                     <input asp-for="Balance" class="form-control" />

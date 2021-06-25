@@ -6,7 +6,60 @@
 <head>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <link rel="stylesheet"href="~/css/WithdrawStatus.css"/>
+    <style>
+        .body {
+            text-align: center;
+        }
+
+        #tb {
+            text-align: center;
+        }
+
+        #hd {
+            text-align: right;
+        }
+
+        #unl {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        #list {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        #ab {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #4CAF50;
+        }
+
+        #abc {
+            float: right;
+            color:white;
+        }
+    </style>
 </head>
 <body>
     <!--<h1>Withdraw Status</h1>
@@ -14,14 +67,14 @@
     <header>
         <ul id="unl">
             <li id="list"><span id="ab" class="active">Withdraw Status</span></li>
-            <li id="list"><span id="abcd" onclick="window.print()"><i class='fas fa-print' style='font-size:48px;color:red'></i></span></li>
-            <li id="list"><a asp-action="Index"><i class='fas fa-home' style='font-size:48px;color:red'></i></a></li>
+            <li id="list"><span id="abc" onclick="window.print()">Print <i class='fas fa-print' style='font-size:30px;padding-top:12px;color:#b3f7ae'></i></span></li>
+            <li id="list"><a asp-action="Index"> Home <i class='fas fa-home' style='font-size:30px;color:#b3f7ae'></i></a></li>
         </ul>
     </header>
     @{ if (Model.Message.Equals("Withdraw Successfull,but service charge will be deducted at the end of month since Balance is less than 1000") ||
                         Model.Message.Equals("Withdraw Successfull"))
                     {
-                        <table border="1">
+                        <table>
                             <tr>
                                 <th>
                                     Particulars

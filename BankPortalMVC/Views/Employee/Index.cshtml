@@ -1,18 +1,98 @@
 ﻿
-@{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewData["Title"] = "Index";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
 <head>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <link rel="stylesheet" href="~/css/EmployeeIndex.css"/>
+    <style>
+        #hd {
+            padding-left: 60px;
+        }
+
+        #tb {
+            border-radius: 20px;
+            text-align: center;
+            margin-left: 10%;
+        }
+
+        body {
+            text-align: center;
+        }
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+        h1 {
+            text-align: left;
+        }
+        table{
+            align-content:center;
+        }
+        #td{
+            text-align:left;
+            padding:10px;
+        }
+        #log {
+            padding-top:14px;
+            float: right;
+        }
+        #list {
+            float: left;
+        }
+        #ab {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #4CAF50;
+        }
+        #lo {
+            float: right;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        #unl {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        #clock {
+            color: white;
+            float: right;
+            font-size: 17px;
+        }
+    </style>
 </head>
-<h1>Employee ID::@TokenInfo.UserID<a asp-controller="User" asp-action="Logout"><span id="hd"><i class='fas fa-power-off' style='font-size:48px;color:red'></i></span></a></h1>
-<div id="clock">8:10:45</div>
+<header>
+    <ul id="unl">
+        <!--<li>Employee ID:@TokenInfo.UserID<a asp-controller="User" asp-action="Logout"><span id="hd"><i class='fas fa-power-off' style='font-size:20px;color:#4CAF50'></i></span></a>-->
+
+        <li id="list"><span id="ab" class="active">Employee ID:@TokenInfo.UserID</span></li>
+        <li><span id="lo">Time: <span id="clock">8:10:45</span></span></li>
+        <li id="log">
+            <a asp-controller="User" asp-action="Logout">
+                Logout
+                <i class='fas fa-power-off' style='font-size:15px;color:white'></i>
+            </a>
+        </li>
+
+    </ul>
+</header>
 <br />
 <h4>Click any one of the link to perform the task</h4>
-<table id="tb" border="1">
+<table id="tb" border="0">
     <tr>
         <th>
             Task
@@ -22,22 +102,22 @@
         </td>
     </tr>
     <tr>
-        <td>
+        <td id="td">
             Create a New Customer Account
         </td>
-        <td>
+        <td id="td">
             <a asp-action="CreateCustomer">Create a new Customer Account</a><br />
         </td>
     </tr>
     <tr>
-        <td>
+        <td id="td">
             Get a customer account details
         </td>
-        <td>
+        <td id="td">
             <a asp-action="GetCustomerAccountDetails">Get a particular Customer Account Details</a><br />
         </td>
     </tr>
-    
+
 </table>
 <script>
     setInterval(showTime, 1000);

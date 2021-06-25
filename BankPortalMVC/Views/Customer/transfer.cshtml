@@ -5,7 +5,44 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <head>
-    <link rel="stylesheet" href="~/css/Transfer.css" />
+    <style>
+        #unl {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        #lst {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+        .active {
+            background-color: #4CAF50;
+        }
+        #btn {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -22,17 +59,19 @@
     <div class="row">
         <div class="col-md-4">
             <form asp-action="transfer" method="post">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div><br />
                 <div class="form-group">
                     <label asp-for="source_accid" class="control-label">Enter Your Account ID</label>
                     <input asp-for="source_accid" class="form-control" />
                     <span asp-validation-for="source_accid" class="text-danger"></span>
                 </div>
+                <br />
                 <div class="form-group">
                     <label asp-for="destination_accid" class="control-label">Enter Receiver Account ID</label>
                     <input asp-for="destination_accid" class="form-control" />
                     <span asp-validation-for="destination_accid" class="text-danger"></span>
                 </div>
+                <br />
                 <div class="form-group">
                     <label asp-for="amount" class="control-label">Amount to be transfered</label>
                     <input asp-for="amount" class="form-control" />

@@ -1,13 +1,59 @@
 ﻿@model IEnumerable<BankPortalMVC.Models.dwacc>
 
-@{
-    ViewData["Title"] = "Index";
+@{ ViewData["Title"] = "Index";
     //Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <head>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <link rel="stylesheet" href="~/css/CustomerIndex.css" />
+    <style>
+        #lo {
+            float: right;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        #btn {
+            color: blueviolet;
+            font-size: medium;
+            text-decoration: none;
+        }
+
+        #unl {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        #lst {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+            li a:hover:not(.active) {
+                background-color: #111;
+            }
+
+        .active {
+            background-color: #4CAF50;
+        }
+
+        #log {
+            float: right;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,10 +63,16 @@
             <li id="lst"><a asp-action="Withdraw">Withdraw Money</a></li>
             <li id="lst"><a asp-action="Transfer">Transfer Money</a></li>
             <li id="lst"><a asp-action="AccountStatement">See Account Statements</a></li>
-            <li id="lst"><a asp-controller="User" asp-action="Logout"><i class='fas fa-power-off' style='font-size:20px;color:red'></i></a></li>
+            <li id="log">
+                <a asp-controller="User" asp-action="Logout">
+                    Logout
+                    <i class='fas fa-power-off' style='font-size:15px;color:white'></i>
+                </a>
+            </li>
+            <li><span id="lo">Time: <span id="clock">8:10:45</span></span></li>
         </ul>
     </header>
-    <h1>Customer Id::@TokenInfo.UserID<span id="lo">Current Time<span id="clock">8:10:45</span></span></h1>
+    <h1>Customer Id: @TokenInfo.UserID</h1>
     <!--<p>
         <table class="table">
         <tr>
@@ -48,26 +100,23 @@
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.AccountId)
-                    </td>
-                    <td>
-                        @{
-                            var message = "";
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.AccountId)
+    </td>
+    <td>
+        @{ var message = "";
                             if (item.AccountId % 2 == 0)
                             { message = "Savings"; }
                             else
-                            { message = "Current"; }
-                        }
-                        <p>@message</p>
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Balance)
-                        .00
-                    </td>
-                </tr>
-            }
+                            { message = "Current"; } }
+        <p>@message</p>
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Balance)
+        .00
+    </td>
+</tr>            }
         </tbody>
     </table>
     <script>

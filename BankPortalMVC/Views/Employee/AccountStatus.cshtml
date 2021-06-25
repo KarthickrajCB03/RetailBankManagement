@@ -9,38 +9,94 @@
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet"href="~/css/AccountStatus.css"/>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        table {
+            text-align: center
+        }
+
+        #hd {
+            text-align: right
+        }
+        .body {
+            text-align: center;
+        }
+
+        #tb {
+            text-align: center;
+        }
+
+        #hd {
+            text-align: right;
+        }
+
+        #unl {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        #list {
+            float: left;
+        }
+
+        #list1 {
+            float: left;
+        }
+
+        #list2 {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        #ab {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+
+
+        .active {
+            background-color: #4CAF50;
+        }
+
+        #abcd {
+            float: right;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <span class="navbar-brand">Customer Account Details</span>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-action="Index"><i class='fas fa-home' style='font-size:48px;color:red'></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link text-dark" onclick="window.print()"><i class='fas fa-print' style='font-size:48px;color:red'></i></button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <ul id="unl">
+            <li id="list"><span id="ab" class="active">Customer Account Details</span></li>
+            <li id="list2"><span id="abcd" onclick="window.print()">Print<i class='fas fa-print' style='font-size:30px;padding-top:12px;color:#b3f7ae'></i></span></li>
+            <li id="list3"><a asp-action="Index">Home<i class='fas fa-home' style='font-size:30px;color:#b3f7ae'></i></a></li>
+        </ul>
     </header>
     <!--<h1>Account Details</h1>
     <div id="hd"><a asp-action="Index">Go to Home Page</a></div>-->
     <table class="table">
         <thead>
             <tr>
-                <td>
+                <th>
                     Account ID
-                </td>
+                </th>
                 <th>
                     Account Type
                 </th>

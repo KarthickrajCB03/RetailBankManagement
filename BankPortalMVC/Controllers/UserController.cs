@@ -30,14 +30,14 @@ namespace BankPortalMVC.Controllers
             HttpResponseMessage response;
             try
             {
-                response = client.PostAsync(client.BaseAddress + "/Token", data).Result;
+                response = client.PostAsync(client.BaseAddress + "/Token/auth", data).Result;
             }
             catch
             {
                 return RedirectToAction("Error");
             }
             string token = response.Content.ReadAsStringAsync().Result;
-            if (token != "error")
+            if (response.ReasonPhrase != "Bad Request")
             {
                 TokenInfo.StringToken = token;
                 TokenInfo.UserID = user.UserID;

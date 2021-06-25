@@ -1,17 +1,57 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@{ ViewData["Title"] = "Home Page"; }
 
 <head>
-    <link rel="stylesheet"href="~/css/HomeIndex.css"/>
+    <style>
+    body { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1616803140344-6682afb13cda?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 50%; }
+
+        #clock {
+            font-size: 15px;
+            width: 200px;
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 20px;
+            margin-top: 15px;
+            background-color: #4CAF50;
+            color: white;
+            float: right;
+        }
+
+        #btn {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 20px;
+            margin-top: 40px;
+            margin-left: 70px;
+            float:inline-end;
+        }
+        h1{
+            color:white;
+        }
+        .display-4 {
+            font-family: serif;
+            margin-top: 20px;
+        }
+    </style>
 </head>
+<header>
+    <h1 class="display-4">Welcome to Retail Banking </h1>
+    <div id="clock">8:10:45</div>
+     <div><input type='button' id="btn" value='Login' onclick='window.location = "@Url.Action("Login", "User")";' /></div>
+     
+</header>
 <body>
     <div class="text-center">
-        <h1 class="display-4">Welcome to Bank ABC</h1>
+        
+
         <!--<h6>Please Login to continue</h6>
         <!--<p><a asp-controller="User" asp-action="Login">Click here to login</a></p>-->
-        <input type='button' id="btn" value='Login' onclick='window.location = "@Url.Action("Login", "User")";' />
-        <div id="clock">8:10:45</div>
+        
 
         <script>
             setInterval(showTime, 1000);

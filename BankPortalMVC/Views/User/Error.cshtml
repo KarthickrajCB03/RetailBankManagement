@@ -1,8 +1,6 @@
 ﻿
-@{
-    ViewData["Title"] = "Error";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewData["Title"] = "Error";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
 <head>
     <style>
         #btn {
@@ -15,15 +13,15 @@
             display: inline-block;
             font-size: 16px;
             border-radius: 20px;
-            margin-top: 80px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <h1>Error occured while proccessing your request </h1>
+Please check your login credentials and try again.
 <br />
-Your login info not correct or Micro service might not be working
 <br />
-click below
+Click the below button to login.
 <div>
-    <a asp-controller="User" asp-action="Login" id="btn" class="btn btn-outline-primary">Login Again</a>
+    <a asp-controller="User" asp-action="Login" id="btn" class="btn btn-outline-primary">Login</a>
 </div>
