@@ -1,14 +1,13 @@
-using AuthenticateMicroservices;
+
 using AuthenticateMicroservices.Controllers;
 using AuthenticateMicroservices.Model;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Moq;
 using NUnit.Framework;
 
 namespace AuthenticateUnit
 {
-    public class Tests
+    public class AuthUnit
     {
         [SetUp]
         public void Setup()
@@ -16,7 +15,7 @@ namespace AuthenticateUnit
         }
 
         [Test]
-        public void IsTokenNotNullIsTokenNotNull_When_ValidUserCredentialsAreUsed()
+        public void IsTokenNotNull_When_ValidUserCredentialsAreUsed()
         {
             Mock<IConfiguration> config = new Mock<IConfiguration>();
             TokenController TokenObj = new TokenController();

@@ -7,6 +7,7 @@ using CustomerMicroservice.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
+using log4net;
 
 namespace CustomerMicroservice.Controllers
 {
@@ -14,7 +15,7 @@ namespace CustomerMicroservice.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        static readonly log4net.ILog _log4net = log4net.LogManager.GetLogger(typeof(CustomerController));
+        static readonly ILog _log4net = log4net.LogManager.GetLogger(typeof(CustomerController));
         
         
         [HttpGet]
@@ -46,10 +47,12 @@ namespace CustomerMicroservice.Controllers
                 var obj = CustomerRep.createCustomer(customer);
                 if (obj == null)
                 {
+                    _log4net.Info("Error in Customer Creation.");
                     return NotFound();
                 }
+                _log4net.Info("New Customer account is created");
                 return Ok(obj);
-                //_log4net.Info("New Customer account is created");
+                
             }
             catch (Exception)
             {

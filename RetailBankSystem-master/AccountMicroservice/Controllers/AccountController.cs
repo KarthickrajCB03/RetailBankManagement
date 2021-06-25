@@ -156,6 +156,8 @@ namespace AccountMicroservice.Controllers
             if(from_date!=0 || to_date!=0)
             {
                 var accs = ac.Find(a => a.AccId == AccountId);
+                if (accs == null)
+                    return null;
                 var s = accs.Statements;
                 if (s == null)
                     return null;
