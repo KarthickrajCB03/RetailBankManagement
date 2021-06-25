@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RulesMicroservice", "..\Rul
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthenticateMicroservices", "..\AuthenticateMicroservices\AuthenticateMicroservices.csproj", "{14E16B48-F1F9-470E-91F2-235644BDEF68}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthenticateUnit", "..\AuthenticateUnit\AuthenticateUnit.csproj", "{A5CD2297-7D9A-4316-BB75-DDA8BA24D754}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{14E16B48-F1F9-470E-91F2-235644BDEF68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14E16B48-F1F9-470E-91F2-235644BDEF68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14E16B48-F1F9-470E-91F2-235644BDEF68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5CD2297-7D9A-4316-BB75-DDA8BA24D754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5CD2297-7D9A-4316-BB75-DDA8BA24D754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5CD2297-7D9A-4316-BB75-DDA8BA24D754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5CD2297-7D9A-4316-BB75-DDA8BA24D754}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
