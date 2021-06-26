@@ -8,30 +8,31 @@ namespace AccountMicroservice.Repository
 {
     public static class GetListRep
     {
-        public static List<AccountStatement> GetAccountStatementsList()
-        {
-            List<AccountStatement> accountStatements = new List<AccountStatement>()
+       public static List<AccountStatement> accountStatements = new List<AccountStatement>()
             {
+                new AccountStatement{AccId=101,
+                    Statements= new List<Statement>()
+                    {
+                    
+                    new Statement{date=26062021,Narration="Deposit from Bank",refno=21345,valueDate=04022020,withdrawal=0.00,deposit=5000.00,closingBalance=5000.00}
+                    }
+                },
                 new AccountStatement{AccId=102,
                     Statements= new List<Statement>()
                     {
-                    new Statement{date=01022020,Narration="Withdrawal from Account",refno=12345,valueDate=01022020,withdrawal=1000.00,deposit=0.00,closingBalance=1000.00},
+                    
 
-                    new Statement{date=04022020,Narration="Transfer from XYZ",refno=21345,valueDate=04022020,withdrawal=0.00,deposit=2000.00,closingBalance=3000.00}
+                    new Statement{date=26022021,Narration="Deposit from Bank",refno=21345,valueDate=04022020,withdrawal=0.00,deposit=2000.00,closingBalance=2000.00}
                     }
-                } 
+                }
             };
+        public static List<AccountStatement> GetAccountStatementsList()
+        {
+            
             return accountStatements;
         }
 
-    /*    public List<CurrentAccount> GetCurrentAccountsList()
-        {
-            List<CurrentAccount> currentAccounts = new List<CurrentAccount>()
-            {
-                new CurrentAccount{CAId=101,CBal=1000}
-            };
-            return currentAccounts;
-        }*/
+   
 
         public static List<customeraccount> GetCustomeraccountsList()
         {
@@ -42,18 +43,6 @@ namespace AccountMicroservice.Repository
             return customeraccounts;
         }
 
-      /*  public List<SavingsAccount> GetSavingsAccountsList()
-        {
-            List<SavingsAccount> savingsAccounts = new List<SavingsAccount>()
-            {
-                new SavingsAccount{SAId=102,SBal=500}
-            };
-            return savingsAccounts;
-        }
-      */
-        /*public List<Statement> GetStatementsList()
-        {
-            throw new NotImplementedException();
-        }*/
+      
     }
 }

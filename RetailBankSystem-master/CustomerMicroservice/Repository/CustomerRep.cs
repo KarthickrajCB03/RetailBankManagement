@@ -35,12 +35,17 @@ namespace CustomerMicroservice.Repository
             {
                 var ob = new CustomerCreationStatus();
                 ob.CustomerId = customer.id;
-                ob.Message = "Success. Current and Savings account also created";
+                ob.Message = "Success Current and Savings account also created";
                 ob.CurrentAccountId = customer.id * 100+1;
                 ob.SavingsAccountId = customer.id * 100 +2;
                 return ob;
             }
-            return null;
+            return new CustomerCreationStatus 
+                {   CustomerId = customer.id,
+                    Message = "Please Enter Valid Details",
+                    CurrentAccountId = customer.id * 100 + 1,
+                    SavingsAccountId = customer.id * 100 + 2
+                }; 
         }
 
         public static Customer getCustomerDetails(int CustId)

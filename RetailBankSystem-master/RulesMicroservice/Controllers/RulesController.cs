@@ -26,15 +26,7 @@ namespace RulesMicroservice.Controllers
            
         }
 
-        // GET: api/<RulesController>
-    /*    [HttpGet]
-        public IEnumerable<Account> Get()
-        {
-            _log4net.Info("Account List Obtained");
-            return accountList;
-        }*/
-
-        // GET api/<RulesController>/5
+        
         [HttpPost]
         [Route("evaluateMinBalCurrent")]
         public List<CurrentAccount> evaluateMinBal([FromBody] CurrentAccount value)

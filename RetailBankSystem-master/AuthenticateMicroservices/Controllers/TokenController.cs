@@ -17,11 +17,7 @@ namespace AuthenticateMicroservices.Controllers
     [ApiController]
     public class TokenController : ControllerBase
     {
-        /*public static List<User> userList = new List<User>
-        {
-            new User{UserId=1,Password="1234",Roles="Employee"},
-            new User{UserId=2,Password="12345",Roles="Customer"}
-        };*/
+        
         readonly log4net.ILog _log4net;
         public TokenController()
         {
@@ -36,7 +32,7 @@ namespace AuthenticateMicroservices.Controllers
             var userList = uL.getUserList();
             foreach (var v in userList)
             {
-                if (u.UserId ==  v.UserId && u.Password == v.Password)
+                if (u.UserId ==  v.UserId && u.Password == v.Password && u.Roles==v.Roles)
                 {
                     string role = "";
                     if (u.Roles == "Employee")

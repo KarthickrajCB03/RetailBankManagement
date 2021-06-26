@@ -62,19 +62,19 @@
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div><br />
                 <div class="form-group">
                     <label asp-for="source_accid" class="control-label">Enter Your Account ID</label>
-                    <input asp-for="source_accid" class="form-control" />
+                    <input asp-for="source_accid" class="form-control" autofocus  required="required"/>
                     <span asp-validation-for="source_accid" class="text-danger"></span>
                 </div>
                 <br />
                 <div class="form-group">
                     <label asp-for="destination_accid" class="control-label">Enter Receiver Account ID</label>
-                    <input asp-for="destination_accid" class="form-control" />
+                    <input asp-for="destination_accid" class="form-control"  required="required"/>
                     <span asp-validation-for="destination_accid" class="text-danger"></span>
                 </div>
                 <br />
                 <div class="form-group">
                     <label asp-for="amount" class="control-label">Amount to be transfered</label>
-                    <input asp-for="amount" class="form-control" />
+                    <input asp-for="amount" class="form-control"  required="required"/>
                     <span asp-validation-for="amount" class="text-danger"></span>
                 </div>
                 <div class="form-group">

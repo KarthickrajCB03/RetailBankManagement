@@ -40,7 +40,9 @@ namespace BankPortalMVC.Controllers
                 CustomerCreationStatus ob4 = JsonConvert.DeserializeObject<CustomerCreationStatus>(data1);
                 return RedirectToAction("CreationStatus", ob4);
             }
-            return BadRequest();
+            var ob = new CustomerCreationStatus {Message="Enter Valid Data for Customer Details" };
+            return RedirectToAction("CreationStatus", ob);
+           
         }
         public IActionResult CreationStatus(CustomerCreationStatus ob4)
         {
@@ -55,20 +57,11 @@ namespace BankPortalMVC.Controllers
         public IActionResult GetCustomerAccountDetails(customerid cid)
         {
             return RedirectToAction("AccountStatus", cid);
-           /*int acid = cid.id;
-            //var ac = new List<AccountMsg>();
-            HttpResponseMessage response = client.GetAsync("https://localhost:44379/api/Account/getCustomerAccounts/" + cid.id).Result;
-            if (response.IsSuccessStatusCode)
-            {
-                string data = response.Content.ReadAsStringAsync().Result;
-                List<AccountMsg> ac = JsonConvert.DeserializeObject<List<AccountMsg>>(data);
-                return RedirectToAction("AccountStatus", ac);
-            }
-            return BadRequest();*/
+           
         }
         public IActionResult AccountStatus(customerid cid)
         {
-            //List<AccountMsg> abc = ac;
+            
             int acid = cid.id;
             HttpResponseMessage response = client.GetAsync("https://localhost:44379/api/Account/getCustomerAccounts/" + acid).Result;
             if (response.IsSuccessStatusCode)
@@ -77,7 +70,7 @@ namespace BankPortalMVC.Controllers
                 List<dwacc> ac = JsonConvert.DeserializeObject<List<dwacc>>(data);
                 return View(ac);
             }
-            return BadRequest();
+            return View(response);
         }
         public IActionResult CurrentAccountChecking()
         {

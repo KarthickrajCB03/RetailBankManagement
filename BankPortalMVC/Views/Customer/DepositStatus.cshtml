@@ -11,10 +11,14 @@
             text-align: center;
         }
 
-        #tb {
-            text-align: center;
+        
+        table {
+            text-align: left;
         }
 
+        td {
+            padding: 5px;
+        }
         #hd {
             text-align: right;
         }
@@ -74,7 +78,7 @@
     
     @{ if (Model.Message.Equals("Deposited Successfully"))
         {
-            <table border="0" id="tb">
+            <table >
                 <tr>
                     <th>
                         Particulars

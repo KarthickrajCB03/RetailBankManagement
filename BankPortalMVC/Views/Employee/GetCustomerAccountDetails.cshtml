@@ -1,5 +1,4 @@
 ﻿@model BankPortalMVC.Models.customerid
-
 @{
     ViewData["Title"] = "GetCustomerAccountDetails";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -28,7 +27,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div><br />
             <div class="form-group">
                 <label asp-for="id" class="control-label">Enter the Customer ID </label>
-                <input asp-for="id" class="form-control" />
+                <input asp-for="id" class="form-control"  autofocus required="required"/>
                 <span asp-validation-for="id" class="text-danger"></span>
             </div>
             <div class="form-group">

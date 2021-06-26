@@ -92,42 +92,55 @@
     </header>
     <!--<h1>Account Details</h1>
     <div id="hd"><a asp-action="Index">Go to Home Page</a></div>-->
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    Account ID
-                </th>
-                <th>
-                    Account Type
-                </th>
-                <th>
-                    Account Balance
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.AccountId)
-                    </td>
-                    <td>
-                        @{
-                            var message="";
-                            if (item.AccountId % 2 == 0)
-                            { message = "Savings"; }
-                            else
-                            { message = "Current"; }
-                        }
-                        <p>@message</p>
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Balance)
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    @{
+        if (Model == null)
+        {
+            <h2>Customer Not Exists,Enter Correct Customer ID</h2>
+        }
+        else
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Account ID
+                        </th>
+                        <th>
+                            Account Type
+                        </th>
+                        <th>
+                            Account Balance
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AccountId)
+                            </td>
+                            <td>
+                                @{
+                                    var message = "";
+                                    if (item.AccountId % 2 == 0)
+                                    { message = "Savings"; }
+                                    else
+                                    { message = "Current"; }
+                                }
+                                <p>@message</p>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Balance)
+                            </td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        }
+    }
+
+
 </body>

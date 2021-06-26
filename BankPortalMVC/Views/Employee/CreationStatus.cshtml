@@ -94,46 +94,56 @@
         </ul>
     </header>
     <!--<h1>Customer Creation Status</h1>-->
-    <table >
-        <tr>
-            <th>
-                Particulars
-            </th>
-            <th>
-                Details
-            </th>
-        </tr>
-        <tr>
-            <td>
-                Customer ID
-            </td>
-            <td>
-                @Model.CustomerId
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Customer Current Account ID
-            </td>
-            <td>
-                @Model.CurrentAccountId
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Customer Savings Account ID
-            </td>
-            <td>
-                @Model.SavingsAccountId
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Customer Account Creation Status
-            </td>
-            <td>
-                @Model.Message
-            </td>
-        </tr>
-    </table>
+    @{ if (Model.Message.Equals("Enter Valid Data for Customer Details"))
+                    {
+                        <h2>@Model.Message</h2>
+                    }
+                    else
+                    {
+                        <table>
+                            <tr>
+                                <th>
+                                    Particulars
+                                </th>
+                                <th>
+                                    Details
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Customer ID
+                                </td>
+                                <td>
+                                    @Model.CustomerId
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Customer Current Account ID
+                                </td>
+                                <td>
+                                    @Model.CurrentAccountId
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Customer Savings Account ID
+                                </td>
+                                <td>
+                                    @Model.SavingsAccountId
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Customer Account Creation Status
+                                </td>
+                                <td>
+                                    @Model.Message
+                                </td>
+                            </tr>
+                        </table>
+                                    } 
+        }
+
+
 </body>

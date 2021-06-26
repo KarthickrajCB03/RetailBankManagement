@@ -66,17 +66,17 @@
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="AccountId" class="control-label">Enter Account ID</label>
-                    <input asp-for="AccountId" class="form-control" />
+                    <input asp-for="AccountId" class="form-control" autofocus required="required"/>
                     <span asp-validation-for="AccountId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="from_date" class="control-label">Enter start date(Donot give / Eg: If 26/09/2020 give 26092020)</label>
-                    <input asp-for="from_date" class="form-control" />
+                    <input asp-for="from_date" class="form-control"  required="required"/>
                     <span asp-validation-for="from_date" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="to_date" class="control-label">Enter end date(Donot give / Eg: If 26/09/2020 give 26092020)</label>
-                    <input asp-for="to_date" class="form-control" />
+                    <input asp-for="to_date" class="form-control" required="required" />
                     <span asp-validation-for="to_date" class="text-danger"></span>
                 </div>
                 <div class="form-group">

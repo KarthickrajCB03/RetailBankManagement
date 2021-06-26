@@ -54,7 +54,13 @@
         .active {
             background-color: #4CAF50;
         }
+        table {
+            text-align: left;
+        }
 
+        td {
+            padding: 5px;
+        }
         #abcd{
             float: right;
             color:white;
@@ -85,20 +91,13 @@
                             </tr>
                             <tr>
                                 <td>
-                                    Sender Account Balance
+                                    Your Account Balance
                                 </td>
                                 <td>
                                     @Model.sbal
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
-                                    Receiver Account Balance
-                                </td>
-                                <td>
-                                    @Model.rbal
-                                </td>
-                            </tr>
+                            
                             <tr>
                                 <td>
                                     Transfer Status
